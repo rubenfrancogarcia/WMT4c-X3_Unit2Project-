@@ -103,5 +103,6 @@ public class Order {
         System.out.println("The total is "+ subtotal); 
         new CreateFile();
         new WriteToFile(order); 
+        input.close();
     }
 }

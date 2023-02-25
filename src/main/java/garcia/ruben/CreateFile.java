@@ -8,7 +8,7 @@ public class CreateFile {
         try{
             File salesData = new File("salesData.txt"); 
             if(salesData.createNewFile()){
-                System.out.println("File created")
+                System.out.println("File created");
             }else{
                 System.out.println("File already exists");
             }

@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ){
     
         ArrayList<Cupcake> cupcakeMenu = new ArrayList<>(); 
         Cupcake cupcake = new Cupcake(); 
@@ -57,10 +57,11 @@ public class App
         milk.setPrice(price);
         drinkMenu.add(milk); 
         new Order(cupcakeMenu, drinkMenu); 
+        input.close();
 
     }
 
-    public class Cupcake{
+    public static class Cupcake{
         double price; 
         
         public void setPrice(double price){
@@ -77,19 +78,19 @@ public class App
         }
     }
 
-    public class RedVelvet extends Cupcake{
+    public static class  RedVelvet extends Cupcake{
         public void type(){
             System.out.println("A red velvet based cupcake, with cream cheese frosting"); 
         }
     }
 
-    public class Chocolate extends Cupcake {
+    public static class Chocolate extends Cupcake {
         public void type(){
             System.out.println("A chocolate based cupcake, with chocolate frosting"); 
         }
     }
 
-    public class Drink{
+    public static class Drink{
         double price; 
         public void setPrice(double price){
             this.price = price; 
@@ -104,13 +105,13 @@ public class App
         }
     }
 
-    public class Soda extends Drink{
+    public static class Soda extends Drink{
         public void type(){
             System.out.println("I am a soda drink"); 
         }
     }
 
-    public class Milk extends Drink{
+    public static class Milk extends Drink{
         public void type(){
             System.out.println("I am a milk drink"); 
         }
