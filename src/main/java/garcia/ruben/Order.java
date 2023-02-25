@@ -2,10 +2,7 @@ package garcia.ruben;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
-import java.time.LocalDate;
-
 import garcia.ruben.App.Cupcake;
 import garcia.ruben.App.Drink;
 
@@ -72,6 +69,39 @@ public class Order {
             }
 
         }
-        
+        for(Object item: order){
+            System.out.println(item); 
+        }
+        double subtotal = 0.0; 
+        for(int i =2; i < order.size(); i++){
+            if(order.get(i).equals(cupcakeMenu.get(0))){
+                cupcakeMenu.get(0).type();
+                System.out.println(cupcakeMenu.get(0).getPrice());
+                subtotal += cupcakeMenu.get(0).getPrice();
+            }else if (order.get(i).equals(cupcakeMenu.get(1))){
+                cupcakeMenu.get(1).type();
+                System.out.println(cupcakeMenu.get(1).getPrice());
+                subtotal += cupcakeMenu.get(1).getPrice();
+            }else if (order.get(i).equals(cupcakeMenu.get(2))){
+                cupcakeMenu.get(2).type();
+                System.out.println(cupcakeMenu.get(2).getPrice());
+                subtotal += cupcakeMenu.get(2).getPrice();
+            }else if(order.get(i).equals(drinkMenu.get(0))){
+                drinkMenu.get(0).type();
+                System.out.println(cupcakeMenu.get(0).getPrice());
+                subtotal+= drinkMenu.get(0).getPrice();
+            }else if(order.get(i).equals(drinkMenu.get(1))){
+                drinkMenu.get(1).type();
+                System.out.println(cupcakeMenu.get(1).getPrice());
+                subtotal+= drinkMenu.get(1).getPrice();
+            }else if(order.get(i).equals(drinkMenu.get(2))){
+                drinkMenu.get(2).type();
+                System.out.println(cupcakeMenu.get(2).getPrice());
+                subtotal+= drinkMenu.get(2).getPrice();
+            }
+        }
+        System.out.println("The total is "+ subtotal); 
+        new CreateFile();
+        new WriteToFile(order); 
     }
 }
